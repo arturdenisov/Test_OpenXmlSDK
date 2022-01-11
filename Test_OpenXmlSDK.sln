@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleXmlBinding", "SimpleXmlBinding\SimpleXmlBinding.csproj", "{F66CCB14-98B3-4B87-8261-FE1244130161}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F66CCB14-98B3-4B87-8261-FE1244130161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66CCB14-98B3-4B87-8261-FE1244130161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66CCB14-98B3-4B87-8261-FE1244130161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66CCB14-98B3-4B87-8261-FE1244130161}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E19D458E-59F5-4A05-883C-ABA6B1EEED79}
+	EndGlobalSection
+EndGlobal
