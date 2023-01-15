@@ -15,28 +15,7 @@ namespace OpenXmlSDK
 
         internal static void GenerateFile()
         {
-            //var xml =
-            //  new XElement("Customer",
-            //    new XElement("Name", "John Doe1232"),
-            //    new XElement("Expiration", "2/1/2010"),
-            //    new XElement("AmountDue", "$129.50"));
-
-            // (1) Define XML Data
-            //var xml =
-            //        new XElement("Customers",
-            //             new XElement("Customer1",
-            //                new XElement("Name", "Artur3"),
-            //                new XElement("Expiration", "2/1/1999"),
-            //                new XElement("AmountDue", "$999.99")),
-            //              new XElement("Customer2",
-            //                new XElement("Name", "Natali3"),
-            //                new XElement("Expiration", "2/1/2020"),
-            //                new XElement("AmountDue", "$900.00")),
-            //             new XElement("Customer3",
-            //                new XElement("Name", "Andrey3"),
-            //                new XElement("Expiration", "2/1/2021"),
-            //                new XElement("AmountDue", "$1000.00"))
-            //              );
+    
             var xmlContainer = new XElement("Customers");
             var xmlItem1 = new XElement("Customer1",
                             new XElement("Name", "Artur4"),
@@ -59,10 +38,9 @@ namespace OpenXmlSDK
             {
                 var mainPart = wpd.MainDocumentPart;
 
+
+                // (2) Write Custom XML file into .DOCX
                 var xmlPart = mainPart.AddCustomXmlPart("application/xml"); // you can pass a custom XmlPart or PartId: https://social.msdn.microsoft.com/Forums/office/en-US/95db2ea1-aa48-4b7d-99ae-86b3bad1bdd2/the-type-documentformatopenxmlpackagingcustomxmlpart-cannot-be-used-as-type-parameter-t?forum=oxmlsdk
-
-
-                // (2) Write Customer XML file into .DOCX
                 using (Stream partStream = xmlPart.GetStream(FileMode.Create, FileAccess.Write))
                 {
 
@@ -86,19 +64,16 @@ namespace OpenXmlSDK
                     if(stdRun.Descendants<Tag>().First().Val.ToString().Contains("Name"))
                     { 
                         string tagName = "Customers/Customer1/Name";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                     if (stdRun.Descendants<Tag>().First().Val.ToString().Contains("Expiration"))
                     {
                         string tagName = "Customers/Customer1/Expiration";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                     if (stdRun.Descendants<Tag>().First().Val.ToString().Contains("AmountDue"))
                     {
                         string tagName = "Customers/Customer1/AmountDue";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                 }
@@ -109,19 +84,16 @@ namespace OpenXmlSDK
                     if (stdRun.Descendants<Tag>().First().Val.ToString().Contains("Name"))
                     {
                         string tagName = "Customers/Customer2/Name";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                     if (stdRun.Descendants<Tag>().First().Val.ToString().Contains("Expiration"))
                     {
                         string tagName = "Customers/Customer2/Expiration";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                     if (stdRun.Descendants<Tag>().First().Val.ToString().Contains("AmountDue"))
                     {
                         string tagName = "Customers/Customer2/AmountDue";
-                        stdRun.Descendants<SdtAlias>().First().Val = tagName;
                         stdRun.Descendants<Tag>().First().Val = tagName;
                     }
                 }
