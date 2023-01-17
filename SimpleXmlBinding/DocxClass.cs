@@ -107,7 +107,7 @@ namespace OpenXmlSDK
                   select new
                   {
                       SdtProps = sdtPr,
-                      TagName = tag.GetAttribute("val", "http://schemas.openxmlformats.org/wordprocessingml/2006/main").Value
+                      TagName = tag.Val 
                   };
 
                 foreach (var taggedContentControl in taggedContentControls)
